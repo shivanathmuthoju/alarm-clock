@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm Clock</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="container">
+
+        <div class="left-side">
+            <div class="left-side__aside">
+                <div class="top-square-container">
+                    <div class="top-square">
+                        <div class="time-text"></div>
+                    </div>
+                </div>
+                <div class="day-container">
+                    <p class="day-text letter-spacing uppercase" id="day-text"></p>
+                    <div class="day-line"></div>
+                </div>
+            </div>
+            <div class="time-container">
+                    <div class="time-display">
+                        <div class="time-hour"></div>
+                        <div class="time-min"></div>      
+                    </div>
+                    <div class="time-sec"></div>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <div class="poem-container">
+                <p class="poem uppercase">Then be not coy, but use your time,<br>
+                    And while ye may, go marry;<br>
+                    For having lost but once your prime,<br>
+                    You may forever tarry…</p>
+            </div>
+            <div class="your-alarm-container">
+
+                <div class="your-alarm-heading-container">
+                    <p class="your-alram uppercase letter-spacing">Your alarms</p>
+                    <div class="heading-line"></div>
+                </div>
+                <!-- show when no alarms are set -->
+                <div class="empty-list-indicator">
+                    <p class="empty-text uppercase">looks like you haven’t set any alarm yet
+                        add  one now </p>
+                </div>
+                 <!-- show when alarms are set -->
+                <div class=" alarm-list-container">
+                    <ul id="alarm-list">
+                        <!-- <li>
+                            <div class="alarm-list-content">
+                                <div class="alarm-list-text">
+                                    <span>12:00:00</span>
+                                    <span>PM</span>
+                                </div>
+                                <div>
+                                <i class='alarm-del-btns bx bxs-trash bx-tada-hover' data-class = "alarm-del" id="" data-id=""></i>
+                                </div>
+                            </div>
+                        </li> -->
+                    </ul>
+                </div>
+                
+            </div>
+
+            <button class="bottom-btn" id="add-alarm-btn"><i class='bx bx-plus bx-spin-hover' ></i></button>
+            
+        </div>
+
+        <!-- side panel for adding alarm -->
+        <div class="add-alarm-panel" id="add-alarm-panel">
+            <form id="alarmForm" method="post">
+                <div class="time-panel">
+                    <div class="input-container">
+                        <label for="hours" class="uppercase letter-spacing">Hour</label>
+                        <input type="number" name="hours" id="hours" required min="01" max="12" value="00" class="numbers-input">
+                    </div>
+                    <div class="input-container">
+                        <label for="minutes" class="uppercase letter-spacing">minute</label>
+                        <input type="number" name="minutes" id="minutes" required min="00" max="59" value="00" class="numbers-input">
+                    </div>
+                    <div class="input-container">
+                        <label for="minutes" class="uppercase letter-spacing">second</label>
+                        <input type="number" name="seconds" id="seconds" required min="00" max="59" value="00" class="numbers-input">
+                    </div>
+                    <div class="input-container radios">
+                        <label for="AM">AM</label>
+                        <input type="radio" name="meridiem" id="AM" value="AM" class="meridiem-btns" checked>
+                        <label for="PM">PM</label>
+                        <input type="radio" name="meridiem" id="PM" value="PM" class="meridiem-btns">
+                    </div>
+                </div>
+                <div class="submit-btn-container">
+                    <button type="submit" class="submit-alarm-btn uppercase letter-spacing">Set Alarm</button>
+                </div>
+            </form>
+            <div class="btm-btn-container"><button class="bottom-btn" id="close-alarm-panel"><i class='bx bx-arrow-back bx-fade-left-hover' ></i></button></div>
+        </div>
+
+        <!-- modal for when alarm sets -->
+        <div class="alarm-buzzer">
+            <div class="alarm-icon">
+                <lord-icon
+                src="https://cdn.lordicon.com/reltuksl.json"
+                trigger="loop"
+                delay="2000"
+                colors="primary:#fff"
+                state="hover"
+                style="width:50px;height:50px">
+            </lord-icon>
+            </div>
+            <p>TRING TRING!!!!!!!</p>
+            <button class="stop-alarm-btn">Stop</button>
+        </div>
+    </div>
+    <!-- min screen screen -->
+    <div class="minWidthScreen">
+        <p class="uppercase letter-spacing">please open the website in desktop only</p>
+    </div>
+
+    <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
+    <script src="./script.js"></script>
+    <script src="./functions.js"></script>
+</body>
+</html>
